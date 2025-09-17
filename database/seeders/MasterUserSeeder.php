@@ -10,7 +10,7 @@ class MasterUserSeeder extends Seeder
 {
     public function run(): void
     {
-        $email = 'master@chinmex.mx';
+        $email = 'master@app.com';
         $user = User::where('email', $email)->first();
 
         if (!$user) {
