@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+class SprinfilUserSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $email = 'sprinfil@chinmex.mx';
+        $user = User::where('email', $email)->first();
+
+        if (!$user) {
+            $user = User::create([
+                'name' => 'Sprinfil',
+                'username' => 'sprinfil',
+                'email' => $email,
+                'password' => Hash::make('password'),
+                'email_verified_at' => now(),
+            ]);
+        }
+
+        if (method_exists($user, 'assignRole')) {
+            $user->assignRole('master');
+        }
+    }
+}
