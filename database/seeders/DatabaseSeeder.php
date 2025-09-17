@@ -19,8 +19,6 @@ class DatabaseSeeder extends Seeder
             MasterUserSeeder::class,
             AdminUserSeeder::class,
             OsmarLGUserSeeder::class,
-            SprinfilUserSeeder::class,
-            EduardoUserSeeder::class,
             UserSeeder::class,
         ]);
     }
