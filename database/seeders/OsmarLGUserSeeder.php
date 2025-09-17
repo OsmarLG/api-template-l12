@@ -10,7 +10,7 @@ class OsmarLGUserSeeder extends Seeder
 {
     public function run(): void
     {
-        $email = 'osmarlg@chinmex.mx';
+        $email = 'osmarlg@app.com';
         $user = User::where('email', $email)->first();
 
         if (!$user) {
